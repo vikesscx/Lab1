@@ -1,10 +1,10 @@
 CREATE TABLE Workload (
-workload_id SERIAL PRIMARY KEY,
-teacher_id INT NOT NULL,
-discipline_id INT NOT NULL,
+teacher_code INT NOT NULL,
+discipline_code INT NOT NULL,
 cost_per_hour NUMERIC(10, 2) NOT NULL,
 hourly_pay NUMERIC(10, 2) NOT NULL,
-FOREIGN KEY (discipline_id) REFERENCES Disciplines(discipline_id)
+PRIMARY KEY (teacher_code, discipline_code),
+FOREIGN KEY (discipline_code) REFERENCES Disciplines(discipline_code)
 ON UPDATE CASCADE
 ON DELETE CASCADE
 );
